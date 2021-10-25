@@ -1,0 +1,32 @@
+!    -*- f90 -*-
+! Note: the context of this file is case sensitive.
+
+python module galerkin_stencils ! in 
+    interface  ! in :galerkin_stencils
+        subroutine high_degree_projection_mat(n,remove_i_coefs,coo_dat,coo_col,coo_row) ! in :galerkin_stencils:chebyshev_galerkin.f90
+            integer intent(in) :: n
+            integer intent(in) :: remove_i_coefs
+            real(kind=8) dimension(n - remove_i_coefs),intent(out),depend(n,remove_i_coefs) :: coo_dat
+            integer(kind=4) dimension(n - remove_i_coefs),intent(out),depend(n,remove_i_coefs) :: coo_col
+            integer(kind=4) dimension(n - remove_i_coefs),intent(out),depend(n,remove_i_coefs) :: coo_row
+        end subroutine high_degree_projection_mat
+        subroutine chebyshev_galerkin_stencil_shape(n,bc_type,nelems,ncol,nrow) ! in :galerkin_stencils:chebyshev_galerkin.f90
+            integer intent(in) :: n
+            integer intent(in) :: bc_type
+            integer intent(out) :: nelems
+            integer intent(out) :: ncol
+            integer intent(out) :: nrow
+        end subroutine chebyshev_galerkin_stencil_shape
+        subroutine chebyshev_galerkin_stencil(n,bc_type,nelems,coo_dat,coo_col,coo_row) ! in :galerkin_stencils:chebyshev_galerkin.f90
+            integer intent(in) :: n
+            integer intent(in) :: bc_type
+            integer intent(in) :: nelems
+            real(kind=8) dimension(nelems),intent(out),depend(nelems) :: coo_dat
+            integer(kind=4) dimension(nelems),intent(out),depend(nelems) :: coo_col
+            integer(kind=4) dimension(nelems),intent(out),depend(nelems) :: coo_row
+        end subroutine chebyshev_galerkin_stencil
+    end interface 
+end python module galerkin_stencils
+
+! This file was auto-generated with f2py (version:1.21.2).
+! See http://cens.ioc.ee/projects/f2py2e/
