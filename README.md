@@ -1,20 +1,25 @@
-# eady_linear_stability
+# Eady Linear Stability
 
-####################################################################################################################################################
-# These python scripts solve the linear stability problem for the eady problem in quasi-geostrophy. Equations implemented follow the same syntax than in https://github.com/BenMql/coral (Tchebychev polynomials)
-####################################################################################################################################################
+These Python scripts solve the linear stability problem for the Eady problem in quasi-geostrophy. The equations implemented follow the same syntax as in [this repository](https://github.com/BenMql/coral) (using Chebyshev polynomials).
 
-# driver_eadyQG : (script) returns the spectrum, eigenvalues and eigenvectors for the eady problem. Plots the analytical solutions vertical profiles for the linear stability problem as stated in G.K Vallis Atmospheric and oceanic fluid dynamics Second Edition in the f-plane approximation.
+---
 
-# driver_eadybetaQG : (script) compares the plots from the f-plane approximation problem with the beta problem. Curvature of the earth is taken into account. Results for set of parameters close to quasi-geostrophy must match those of Vallis (See 9.10, Chapter 9).
+## Scripts
 
-# quick_explokx : (contains the most_unstable_kx function) finds the most unstable zonal mode (kx) for the given set of parameters
+### `driver_eadyQG`
+- **Description**: Returns the spectrum, eigenvalues, and eigenvectors for the Eady problem.
+- **Features**: Plots the analytical solution's vertical profiles for the linear stability problem as stated in G.K. Vallis' *Atmospheric and Oceanic Fluid Dynamics*, Second Edition, in the f-plane approximation.
 
-# betaExplo : (script) finds and plots the maximum growthrates for the vertical modes of the eady problem as a function of the beta parameter
+### `driver_eadybetaQG`
+- **Description**: Compares the plots from the f-plane approximation problem with the beta problem, accounting for the Earth's curvature.
+- **Note**: Results for a set of parameters close to quasi-geostrophy must match those of Vallis (See section 9.10, Chapter 9).
 
+### `quick_explokx`
+- **Function**: `most_unstable_kx`
+- **Purpose**: Finds the most unstable zonal mode (kx) for the given set of parameters.
 
-
-
+### `betaExplo`
+- **Description**: Finds and plots the maximum growth rates for the vertical modes of the Eady problem as a function of the beta parameter.
 
 
 
